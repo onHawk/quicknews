@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
+import Articles from '../components/Articles';
+
 class Homescreen extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
   state = {
     articles: [],
   };
@@ -31,6 +30,7 @@ class Homescreen extends Component {
     return (
       <View>
         <Text>Homescreen</Text>
+        <Articles articles={this.state.articles} />
         <Button title="get news" onPress={() => this.fetchNews}>
           Get
         </Button>
