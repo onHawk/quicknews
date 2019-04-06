@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 
 import Articles from '../components/Articles';
 
@@ -23,18 +23,18 @@ class Homescreen extends Component {
       .then(response => response.json())
       .then(promise => {
         this.setState({ articles: promise.articles });
+      })
+      .catch(err => {
+        console.log(err);
       });
   }
   render() {
     console.log(this.state.articles);
     return (
-      <View>
-        <Text>Homescreen</Text>
-        <Articles articles={this.state.articles} />
-        <Button title="get news" onPress={() => this.fetchNews}>
-          Get
-        </Button>
-      </View>
+      <FlatList
+        data={this.state.articles}
+        renderItem={({ item }) => <Articles article={item} />}
+      />
     );
   }
 }
