@@ -6,6 +6,7 @@ import Articles from '../components/Articles';
 class Homescreen extends Component {
   state = {
     articles: [],
+    refresh: true,
   };
 
   componentDidMount() {
@@ -22,19 +23,30 @@ class Homescreen extends Component {
     return fetch(req)
       .then(response => response.json())
       .then(promise => {
-        this.setState({ articles: promise.articles });
+        this.setState({
+          articles: promise.articles,
+          refresh: !this.state.refresh,
+        });
       })
       .catch(err => {
         console.log(err);
       });
   }
+
+  toRefresh() {
+    this.setState({ refresh: true }, () => this.fetchNews());
+  }
   render() {
-    console.log(this.state.articles);
+    // console.log(this.state.articles);
     return (
-      <FlatList
-        data={this.state.articles}
-        renderItem={({ item }) => <Articles article={item} />}
-      />
+      <View>
+        <FlatList
+          data={this.state.articles}
+          renderItem={({ item }) => <Articles article={item} />}
+          refreshing={this.state.refresh}
+          onRefresh={() => this.toRefresh}
+        />
+      </View>
     );
   }
 }
