@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 import {
   StyleSheet,
@@ -31,6 +32,7 @@ class Articles extends Component {
       url,
     } = this.props.article;
 
+    const published = moment(publishedAt).fromNow();
     // console.log(this.props.articles);
     return (
       <Content>
@@ -41,20 +43,24 @@ class Articles extends Component {
           <CardItem>
             <Thumbnail style={styles.articleImg} source={{ uri: urlToImage }} />
           </CardItem>
-          <CardItem>
+          <CardItem bordered>
             <Body>
               <Text>{description}</Text>
             </Body>
           </CardItem>
           <CardItem>
-            <Body>
-              <Text style={styles.source}>{source.name}</Text>
+            <Left>
               <TouchableOpacity
                 style={styles.article}
                 onPress={() => Linking.openURL(url)}
               >
                 <Text>Full Article</Text>
               </TouchableOpacity>
+            </Left>
+
+            <Body>
+              <Text style={styles.source}>{source.name}</Text>
+              <Text>{published}</Text>
             </Body>
           </CardItem>
         </Card>
@@ -67,6 +73,7 @@ const styles = StyleSheet.create({
   article: {
     backgroundColor: '#DDDDDD',
     padding: 8,
+    borderRadius: 3,
   },
   articleImg: {
     flex: 1,
