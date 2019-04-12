@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
+import { withNavigation } from 'react-navigation';
+
 import {
   StyleSheet,
   Text,
@@ -30,6 +32,7 @@ class Articles extends Component {
       source,
       urlToImage,
       url,
+      content,
     } = this.props.article;
 
     const published = moment(publishedAt).fromNow();
@@ -62,6 +65,17 @@ class Articles extends Component {
               <Text style={styles.source}>{source.name}</Text>
               <Text>{published}</Text>
             </Body>
+            <Right>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('Content', {
+                    article: content,
+                  })
+                }
+              >
+                <Text>read more</Text>
+              </TouchableOpacity>
+            </Right>
           </CardItem>
         </Card>
       </Content>
@@ -84,4 +98,5 @@ const styles = StyleSheet.create({
     color: '#1E90FF',
   },
 });
-export default Articles;
+
+export default withNavigation(Articles);

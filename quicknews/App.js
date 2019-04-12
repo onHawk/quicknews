@@ -14,6 +14,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import Home from './screens/Homescreen';
+import Content from './screens/ArticleContent';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -25,6 +26,7 @@ const instructions = Platform.select({
 const AppNavigator = createStackNavigator(
   {
     Home: Home,
+    Content: Content,
   },
   {
     initialRouteName: 'Home',

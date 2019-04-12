@@ -47,7 +47,9 @@ class Homescreen extends Component {
       <View>
         <FlatList
           data={this.state.articles}
-          renderItem={({ item }) => <Articles article={item} />}
+          renderItem={({ item }) => (
+            <Articles article={item} navigation={this.props.navigation} />
+          )}
           refreshing={this.state.refresh}
           onRefresh={() => this.toRefresh}
         />
