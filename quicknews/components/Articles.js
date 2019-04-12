@@ -57,13 +57,13 @@ class Articles extends Component {
                 style={styles.article}
                 onPress={() => Linking.openURL(url)}
               >
-                <Text>Full Article</Text>
+                <Text>source</Text>
               </TouchableOpacity>
             </Left>
 
             <Body>
               <Text style={styles.source}>{source.name}</Text>
-              <Text>{published}</Text>
+              <Text style={styles.published}>{published}</Text>
             </Body>
             <Right>
               <TouchableOpacity
@@ -86,7 +86,7 @@ class Articles extends Component {
 const styles = StyleSheet.create({
   article: {
     backgroundColor: '#DDDDDD',
-    padding: 8,
+    padding: 7,
     borderRadius: 3,
   },
   articleImg: {
@@ -96,6 +96,9 @@ const styles = StyleSheet.create({
   },
   source: {
     color: '#1E90FF',
+  },
+  published: {
+    fontSize: 11,
   },
 });
 
