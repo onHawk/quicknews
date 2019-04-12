@@ -65,7 +65,7 @@ class Articles extends Component {
               <Text style={styles.source}>{source.name}</Text>
               <Text style={styles.published}>{published}</Text>
             </Body>
-            <Right>
+            {/* <Right>
               <TouchableOpacity
                 onPress={() =>
                   this.props.navigation.navigate('Content', {
@@ -75,7 +75,7 @@ class Articles extends Component {
               >
                 <Text>read more</Text>
               </TouchableOpacity>
-            </Right>
+            </Right> */}
           </CardItem>
         </Card>
       </Content>
