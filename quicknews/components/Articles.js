@@ -41,7 +41,7 @@ class Articles extends Component {
       <Content>
         <Card>
           <CardItem>
-            <Text>{title}</Text>
+            <Text style={styles.title}>{title}</Text>
           </CardItem>
           <CardItem>
             <Thumbnail style={styles.articleImg} source={{ uri: urlToImage }} />
@@ -51,7 +51,7 @@ class Articles extends Component {
               <Text>{description}</Text>
             </Body>
           </CardItem>
-          <CardItem>
+          <CardItem style={styles.articleInfo}>
             <Left>
               <TouchableOpacity
                 style={styles.article}
@@ -89,9 +89,13 @@ const styles = StyleSheet.create({
     padding: 7,
     borderRadius: 3,
   },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
   articleImg: {
     flex: 1,
-    height: 200,
+    height: 300,
     borderRadius: 3,
   },
   source: {
@@ -99,6 +103,9 @@ const styles = StyleSheet.create({
   },
   published: {
     fontSize: 11,
+  },
+  articleInfo: {
+    backgroundColor: '#f1f1f1',
   },
 });
 
