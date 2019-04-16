@@ -45,6 +45,12 @@ class Homescreen extends Component {
     // console.log(this.state.articles);
     return (
       <View>
+        <Button
+          title="sources"
+          onPress={() => this.props.navigation.navigate('SourceList')}
+        >
+          list of sources
+        </Button>
         <FlatList
           data={this.state.articles}
           renderItem={({ item }) => (
