@@ -14,7 +14,6 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import Home from './screens/Homescreen';
-import Content from './screens/ArticleContent';
 import SourceList from './screens/SourceList';
 
 const instructions = Platform.select({
@@ -27,7 +26,6 @@ const instructions = Platform.select({
 const AppNavigator = createDrawerNavigator(
   {
     Home: Home,
-    Content: Content,
     SourceList: SourceList,
   },
   {
