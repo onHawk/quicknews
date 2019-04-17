@@ -4,11 +4,6 @@ import { StyleSheet, Text, View, Button, FlatList, Header } from 'react-native';
 import Articles from '../components/Articles';
 
 class Homescreen extends Component {
-  static navigationOptions = {
-    headerTitle: 'Home',
-    headerLeft: <Button title="nav" onPress={() => alert('clicked')} />,
-  };
-
   state = {
     articles: [],
     refresh: true,

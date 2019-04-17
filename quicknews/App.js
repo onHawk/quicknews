@@ -9,7 +9,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createDrawerNavigator, createAppContainer } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
@@ -24,7 +24,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-const AppNavigator = createStackNavigator(
+const AppNavigator = createDrawerNavigator(
   {
     Home: Home,
     Content: Content,
