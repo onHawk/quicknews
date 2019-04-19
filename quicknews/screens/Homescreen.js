@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, FlatList, Header } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+
+import {
+  Button,
+  Container,
+  Header,
+  Title,
+  Left,
+  Icon,
+  Right,
+  Body,
+  Content,
+} from 'native-base';
 
 import Articles from '../components/Articles';
 
@@ -39,13 +51,20 @@ class Homescreen extends Component {
   render() {
     // console.log(this.state.articles);
     return (
-      <View>
-        <Button
-          title="sources"
-          onPress={() => this.props.navigation.navigate('SourceList')}
-        >
-          list of sources
-        </Button>
+      <Container>
+        <Header style={{ backgroundColor: '#ffffff' }}>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.openDrawer()}
+            >
+              <Icon name="menu" style={{ color: 'black' }} />
+            </Button>
+          </Left>
+          <Body>
+            <Title style={{ color: 'black' }}>Home</Title>
+          </Body>
+        </Header>
         <FlatList
           data={this.state.articles}
           renderItem={({ item }) => (
@@ -54,7 +73,7 @@ class Homescreen extends Component {
           refreshing={this.state.refresh}
           onRefresh={() => this.toRefresh}
         />
-      </View>
+      </Container>
     );
   }
 }
