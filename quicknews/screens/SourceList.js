@@ -1,13 +1,36 @@
 import React, { Component } from 'react';
 
-import { StyleSheet, Text, View, Button, FlatList, Header } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
-import { Container, Content, List, ListItem } from 'native-base';
+import {
+  Button,
+  Container,
+  Header,
+  Title,
+  Left,
+  Icon,
+  Right,
+  Body,
+  Content,
+  List,
+  ListItem,
+} from 'native-base';
 
 class SourceList extends Component {
   render() {
     return (
       <Container>
+        <Header transparent>
+          <Left>
+            <Icon
+              name="arrow-back"
+              onPress={() => this.props.navigation.goBack()}
+            />
+          </Left>
+          <Body>
+            <Title style={{ color: 'black' }}>sources</Title>
+          </Body>
+        </Header>
         <Content>
           <List>
             <ListItem>
