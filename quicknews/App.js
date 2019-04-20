@@ -9,12 +9,17 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
-import { createDrawerNavigator, createAppContainer } from 'react-navigation';
+import {
+  createDrawerNavigator,
+  createAppContainer,
+  createStackNavigator,
+} from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import Home from './screens/Homescreen';
 import SourceList from './screens/SourceList';
+import NyTimes from './screens/NyTimes';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -27,11 +32,14 @@ const AppNavigator = createDrawerNavigator(
   {
     Home: Home,
     SourceList: SourceList,
+    NyTimes: NyTimes,
   },
   {
     initialRouteName: 'Home',
   }
 );
+// const stackNavigator = createStackNavigator({
+// });
 
 const AppContainer = createAppContainer(AppNavigator);
 
