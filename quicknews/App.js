@@ -21,6 +21,8 @@ import Home from './screens/Homescreen';
 import SourceList from './screens/SourceList';
 import NyTimes from './screens/NyTimes';
 
+import Drawer from './components/Drawer';
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -31,8 +33,11 @@ const instructions = Platform.select({
 const AppNavigator = createDrawerNavigator(
   {
     Home: Home,
-    SourceList: SourceList,
+    Sources: SourceList,
     NyTimes: NyTimes,
+  },
+  {
+    contentComponent: props => <Drawer {...props} />,
   },
   {
     initialRouteName: 'Home',
