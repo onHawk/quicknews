@@ -52,7 +52,7 @@ class Homescreen extends Component {
     // console.log(this.state.articles);
     return (
       <Container>
-        <Header style={{ backgroundColor: '#ffffff' }}>
+        <Header transparent>
           <Left>
             <Button
               transparent

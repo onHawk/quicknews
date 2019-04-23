@@ -49,14 +49,29 @@ class NyTimes extends Component {
   render() {
     console.log(this.state.articles);
     return (
-      <FlatList
-        data={this.state.articles}
-        renderItem={({ item }) => (
-          <Articles article={item} navigation={this.props.navigation} />
-        )}
-        refreshing={this.state.refresh}
-        onRefresh={() => this.toRefresh}
-      />
+      <Container>
+        <Header transparent>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.openDrawer()}
+            >
+              <Icon name="menu" style={{ color: 'black' }} />
+            </Button>
+          </Left>
+          <Body>
+            <Title style={{ color: 'black' }}>The times</Title>
+          </Body>
+        </Header>
+        <FlatList
+          data={this.state.articles}
+          renderItem={({ item }) => (
+            <Articles article={item} navigation={this.props.navigation} />
+          )}
+          refreshing={this.state.refresh}
+          onRefresh={() => this.toRefresh}
+        />
+      </Container>
     );
   }
 }
