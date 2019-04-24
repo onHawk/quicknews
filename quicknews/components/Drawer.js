@@ -5,8 +5,6 @@ import { Container, Content, Text, List, ListItem } from 'native-base';
 
 import { withNavigation } from 'react-navigation';
 
-import SideBar from './Sidebar';
-
 const routes = ['Home', 'NyTimes', 'Sources'];
 
 class DrawerComp extends Component {
@@ -14,8 +12,6 @@ class DrawerComp extends Component {
     return (
       <Container>
         <Content padder>
-          {/* <Text>DRAWER</Text> */}
-
           <List
             dataArray={routes}
             renderRow={data => {
