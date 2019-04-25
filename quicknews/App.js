@@ -48,7 +48,6 @@ const AppNavigator = createDrawerNavigator(
 
 const AppContainer = createAppContainer(AppNavigator);
 
-// type Props = {};
 export default class App extends Component {
   render() {
     return <AppContainer />;
