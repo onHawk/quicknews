@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 
-import { Container, Content, Text, List, ListItem } from 'native-base';
+import { Container, Content, Text, ListItem } from 'native-base';
 
 import { withNavigation } from 'react-navigation';
 
@@ -12,15 +12,15 @@ class DrawerComp extends Component {
     return (
       <Container>
         <Content padder>
-          <List
-            dataArray={routes}
-            renderRow={data => {
+          <FlatList
+            data={routes}
+            renderItem={data => {
               return (
                 <ListItem
                   button
-                  onPress={() => this.props.navigation.navigate(data)}
+                  onPress={() => this.props.navigation.navigate(data.item)}
                 >
-                  <Text>{data}</Text>
+                  <Text>{data.item}</Text>
                 </ListItem>
               );
             }}
