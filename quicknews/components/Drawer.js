@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList, Text } from 'react-native';
 
-import { Container, Content, Text, ListItem } from 'native-base';
+import { Container, Content, ListItem, Header } from 'native-base';
 
 import { withNavigation } from 'react-navigation';
 
@@ -11,6 +11,15 @@ class DrawerComp extends Component {
   render() {
     return (
       <Container>
+        <View
+          style={{
+            height: 120,
+            backgroundColor: 'lightblue',
+            alignItems: 'stretch',
+          }}
+        >
+          <Text>Drawer</Text>
+        </View>
         <Content padder>
           <FlatList
             data={routes}
