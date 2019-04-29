@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, StatusBar } from 'react-native';
 
 import {
   Button,
@@ -31,18 +31,21 @@ class SourceList extends Component {
             <Title style={{ color: 'black' }}>sources</Title>
           </Body>
         </Header>
+
+        <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+
         <Content>
-          <List>
-            <ListItem>
-              <Text>source 1</Text>
-            </ListItem>
-            <ListItem>
-              <Text>source 2</Text>
-            </ListItem>
-            <ListItem>
-              <Text>source 3</Text>
-            </ListItem>
-          </List>
+          <ListItem>
+            <Text onPress={() => this.props.navigation.navigate('NyTimes')}>
+              The New York Times
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text>source 2</Text>
+          </ListItem>
+          <ListItem>
+            <Text>source 3</Text>
+          </ListItem>
         </Content>
       </Container>
     );

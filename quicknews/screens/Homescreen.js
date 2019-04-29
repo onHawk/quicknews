@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, StatusBar } from 'react-native';
 
 import {
   Button,
@@ -65,6 +65,9 @@ class Homescreen extends Component {
             <Title style={{ color: 'black' }}>Home</Title>
           </Body>
         </Header>
+
+        <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+
         <FlatList
           data={this.state.articles}
           renderItem={({ item }) => (
