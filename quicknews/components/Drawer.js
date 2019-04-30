@@ -5,7 +5,7 @@ import { Container, Content, ListItem, Header } from 'native-base';
 
 import { withNavigation } from 'react-navigation';
 
-const routes = ['Home', 'NyTimes', 'Sources'];
+const routes = ['Home', 'NyTimes', 'Sources', 'Categories'];
 
 class DrawerComp extends Component {
   render() {
@@ -20,6 +20,7 @@ class DrawerComp extends Component {
         >
           <Text>Drawer</Text>
         </View>
+
         <Content padder>
           <FlatList
             data={routes}

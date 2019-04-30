@@ -20,6 +20,7 @@ import { createStore } from 'redux';
 import Home from './screens/Homescreen';
 import SourceList from './screens/SourceList';
 import NyTimes from './screens/NyTimes';
+import CategoryScreen from './screens/CategoryScreen';
 
 import Drawer from './components/Drawer';
 
@@ -35,6 +36,7 @@ const AppNavigator = createDrawerNavigator(
     Home: Home,
     Sources: SourceList,
     NyTimes: NyTimes,
+    Categories: CategoryScreen,
   },
   {
     contentComponent: props => <Drawer {...props} />,
