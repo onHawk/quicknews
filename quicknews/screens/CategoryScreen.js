@@ -19,7 +19,7 @@ class CategoryScreen extends Component {
   render() {
     return (
       <Container>
-        <Header hasTabs>
+        <Header hasTabs transparent>
           <Left>
             <Button
               transparent
@@ -33,7 +33,13 @@ class CategoryScreen extends Component {
           </Body>
         </Header>
 
-        <Tabs renderTabBar={() => <ScrollableTab />}>
+        <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+
+        <Tabs
+          renderTabBar={() => (
+            <ScrollableTab style={{ backgroundColor: '#ffffff' }} />
+          )}
+        >
           <Tab heading="Technology">
             <Tech />
           </Tab>
