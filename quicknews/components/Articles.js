@@ -36,9 +36,8 @@ class Articles extends Component {
     } = this.props.article;
 
     const published = moment(publishedAt).fromNow();
-    // console.log(this.props.articles);
+
     return (
-      // <Content>
       <Card>
         <CardItem>
           <Text style={styles.title}>{title}</Text>
@@ -67,7 +66,6 @@ class Articles extends Component {
           </Body>
         </CardItem>
       </Card>
-      // </Content>
     );
   }
 }
