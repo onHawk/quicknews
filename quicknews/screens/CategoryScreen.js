@@ -11,6 +11,7 @@ import {
   Button,
   Icon,
   Title,
+  TabHeading,
 } from 'native-base';
 
 import Tech from '../components/categories/Technology';
@@ -37,10 +38,19 @@ class CategoryScreen extends Component {
 
         <Tabs
           renderTabBar={() => (
-            <ScrollableTab style={{ backgroundColor: '#ffffff' }} />
+            <ScrollableTab
+              tabsContainerStyle={{ backgroundColor: '#303030', height: 50 }}
+              tabBarUnderlineStyle={{ color: 'red' }}
+            />
           )}
         >
-          <Tab heading="Technology">
+          <Tab
+            heading={
+              <TabHeading style={{ backgroundColor: '#303030' }}>
+                <Text style={{ color: '#f1f1f1' }}>Technology</Text>
+              </TabHeading>
+            }
+          >
             <Tech />
           </Tab>
         </Tabs>

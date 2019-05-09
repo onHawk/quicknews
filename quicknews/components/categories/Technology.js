@@ -36,14 +36,12 @@ class Tech extends Component {
 
   render() {
     return (
-      <Container>
-        <FlatList
-          data={this.state.articles}
-          renderItem={({ item }) => <Articles article={item} />}
-          refreshing={this.state.refresh}
-          onRefresh={() => this.toRefresh}
-        />
-      </Container>
+      <FlatList
+        data={this.state.articles}
+        renderItem={({ item }) => <Articles article={item} />}
+        refreshing={this.state.refresh}
+        onRefresh={() => this.toRefresh}
+      />
     );
   }
 }
