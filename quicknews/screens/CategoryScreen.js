@@ -15,6 +15,7 @@ import {
 } from 'native-base';
 
 import Tech from '../components/categories/Technology';
+import Home from '../screens/Homescreen';
 
 class CategoryScreen extends Component {
   render() {
@@ -52,6 +53,10 @@ class CategoryScreen extends Component {
             }
           >
             <Tech />
+          </Tab>
+
+          <Tab heading="top headlines">
+            <Home />
           </Tab>
         </Tabs>
       </Container>

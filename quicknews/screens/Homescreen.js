@@ -49,10 +49,9 @@ class Homescreen extends Component {
     this.setState({ refresh: true }, () => this.fetchNews());
   }
   render() {
-    // console.log(this.state.articles);
     return (
       <Container>
-        <Header transparent>
+        {/* <Header transparent>
           <Left>
             <Button
               transparent
@@ -64,9 +63,9 @@ class Homescreen extends Component {
           <Body>
             <Title style={{ color: 'black' }}>Home</Title>
           </Body>
-        </Header>
+        </Header> */}
 
-        <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+        {/* <StatusBar barStyle="dark-content" backgroundColor="#ffffff" /> */}
 
         <FlatList
           data={this.state.articles}
