@@ -38,36 +38,36 @@ class Articles extends Component {
     const published = moment(publishedAt).fromNow();
     // console.log(this.props.articles);
     return (
-      <Content>
-        <Card>
-          <CardItem>
-            <Text style={styles.title}>{title}</Text>
-          </CardItem>
-          <CardItem>
-            <Thumbnail style={styles.articleImg} source={{ uri: urlToImage }} />
-          </CardItem>
-          <CardItem bordered>
-            <Body>
-              <Text>{description}</Text>
-            </Body>
-          </CardItem>
-          <CardItem style={styles.articleInfo}>
-            <Left>
-              <TouchableOpacity
-                style={styles.article}
-                onPress={() => Linking.openURL(url)}
-              >
-                <Text>source</Text>
-              </TouchableOpacity>
-            </Left>
+      // <Content>
+      <Card>
+        <CardItem>
+          <Text style={styles.title}>{title}</Text>
+        </CardItem>
+        <CardItem>
+          <Thumbnail style={styles.articleImg} source={{ uri: urlToImage }} />
+        </CardItem>
+        <CardItem bordered>
+          <Body>
+            <Text>{description}</Text>
+          </Body>
+        </CardItem>
+        <CardItem style={styles.articleInfo}>
+          <Left>
+            <TouchableOpacity
+              style={styles.article}
+              onPress={() => Linking.openURL(url)}
+            >
+              <Text>source</Text>
+            </TouchableOpacity>
+          </Left>
 
-            <Body>
-              <Text style={styles.source}>{source.name}</Text>
-              <Text style={styles.published}>{published}</Text>
-            </Body>
-          </CardItem>
-        </Card>
-      </Content>
+          <Body>
+            <Text style={styles.source}>{source.name}</Text>
+            <Text style={styles.published}>{published}</Text>
+          </Body>
+        </CardItem>
+      </Card>
+      // </Content>
     );
   }
 }
