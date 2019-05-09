@@ -33,16 +33,16 @@ const instructions = Platform.select({
 
 const AppNavigator = createDrawerNavigator(
   {
+    Categories: CategoryScreen,
     Home: Home,
     Sources: SourceList,
     NyTimes: NyTimes,
-    Categories: CategoryScreen,
   },
   {
     contentComponent: props => <Drawer {...props} />,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Categories',
   }
 );
 // const stackNavigator = createStackNavigator({
