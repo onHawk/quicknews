@@ -40,11 +40,20 @@ class CategoryScreen extends Component {
         <Tabs
           renderTabBar={() => (
             <ScrollableTab
-              tabsContainerStyle={{ backgroundColor: '#303030', height: 50 }}
-              tabBarUnderlineStyle={{ color: 'red' }}
+              tabsContainerStyle={{ backgroundColor: '#303030' }}
             />
           )}
         >
+          <Tab
+            heading={
+              <TabHeading transparent style={{ backgroundColor: '#303030' }}>
+                <Text style={{ color: '#f1f1f1' }}>Top Headlines</Text>
+              </TabHeading>
+            }
+          >
+            <Home />
+          </Tab>
+
           <Tab
             heading={
               <TabHeading style={{ backgroundColor: '#303030' }}>
@@ -53,10 +62,6 @@ class CategoryScreen extends Component {
             }
           >
             <Tech />
-          </Tab>
-
-          <Tab heading="top headlines">
-            <Home />
           </Tab>
         </Tabs>
       </Container>
