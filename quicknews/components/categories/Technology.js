@@ -17,7 +17,7 @@ class Tech extends Component {
   fetchNews() {
     const url =
       'https://newsapi.org/v2/top-headlines?' +
-      'q=technology&' +
+      'category=technology&country=us&' +
       'apiKey=ef49c93e09c542b98132457198e197ed';
 
     const req = new Request(url);
