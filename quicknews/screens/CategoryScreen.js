@@ -16,6 +16,7 @@ import {
 
 import Tech from '../components/categories/Technology';
 import Home from '../screens/Homescreen';
+import Entertainment from '../components/categories/Entertainment';
 
 class CategoryScreen extends Component {
   render() {
@@ -62,6 +63,15 @@ class CategoryScreen extends Component {
             }
           >
             <Tech />
+          </Tab>
+          <Tab
+            heading={
+              <TabHeading style={{ backgroundColor: '#303030' }}>
+                <Text style={{ color: '#f1f1f1' }}>Entertainment</Text>
+              </TabHeading>
+            }
+          >
+            <Entertainment />
           </Tab>
         </Tabs>
       </Container>
