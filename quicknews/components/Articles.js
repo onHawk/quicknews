@@ -42,9 +42,11 @@ class Articles extends Component {
         <CardItem>
           <Text style={styles.title}>{title}</Text>
         </CardItem>
-        <CardItem>
-          <Thumbnail style={styles.articleImg} source={{ uri: urlToImage }} />
-        </CardItem>
+        {urlToImage ? (
+          <CardItem>
+            <Thumbnail style={styles.articleImg} source={{ uri: urlToImage }} />
+          </CardItem>
+        ) : null}
         <CardItem bordered>
           <Body>
             <Text>{description}</Text>
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
   },
   articleImg: {
     flex: 1,
-    height: 300,
+    height: 250,
     borderRadius: 3,
   },
   source: {
