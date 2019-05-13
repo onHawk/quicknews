@@ -33,7 +33,7 @@ const instructions = Platform.select({
 
 const AppNavigator = createDrawerNavigator(
   {
-    Categories: CategoryScreen,
+    Headlines: CategoryScreen,
     Home: Home,
     Sources: SourceList,
     NyTimes: NyTimes,

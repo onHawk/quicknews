@@ -5,7 +5,7 @@ import { Container, Content, ListItem, Header } from 'native-base';
 
 import { withNavigation } from 'react-navigation';
 
-const routes = ['Sources', 'Categories'];
+const routes = ['Headlines', 'Sources'];
 
 class DrawerComp extends Component {
   render() {
