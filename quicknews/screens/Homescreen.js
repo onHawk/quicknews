@@ -37,7 +37,7 @@ class Homescreen extends Component {
       .then(promise => {
         this.setState({
           articles: promise.articles,
-          refresh: !this.state.refresh,
+          refresh: false,
         });
       })
       .catch(err => {
@@ -51,22 +51,6 @@ class Homescreen extends Component {
   render() {
     return (
       <Container>
-        {/* <Header transparent>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.openDrawer()}
-            >
-              <Icon name="menu" style={{ color: 'black' }} />
-            </Button>
-          </Left>
-          <Body>
-            <Title style={{ color: 'black' }}>Home</Title>
-          </Body>
-        </Header> */}
-
-        {/* <StatusBar barStyle="dark-content" backgroundColor="#ffffff" /> */}
-
         <FlatList
           data={this.state.articles}
           renderItem={({ item }) => (
