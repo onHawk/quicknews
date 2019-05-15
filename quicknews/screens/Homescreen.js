@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, StatusBar } from 'react-native';
 
-import {
-  Button,
-  Container,
-  Header,
-  Title,
-  Left,
-  Icon,
-  Right,
-  Body,
-  Content,
-} from 'native-base';
+import { Button, Container } from 'native-base';
 
 import Articles from '../components/Articles';
 
@@ -45,16 +35,24 @@ class Homescreen extends Component {
       });
   }
 
-  toRefresh() {
+  toRefresh = () => {
     this.setState({ refresh: true }, () => this.fetchNews());
-  }
+  };
+
   render() {
+    console.log(this.refs);
+
     return (
       <Container>
         <FlatList
+          ref="headRef"
           data={this.state.articles}
           renderItem={({ item }) => (
-            <Articles article={item} navigation={this.props.navigation} />
+            <Articles
+              article={item}
+              navigation={this.props.navigation}
+              scrollr={this.scrollToTop}
+            />
           )}
           refreshing={this.state.refresh}
           onRefresh={() => this.toRefresh}

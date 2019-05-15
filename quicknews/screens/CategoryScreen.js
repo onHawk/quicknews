@@ -48,11 +48,25 @@ class CategoryScreen extends Component {
           <Tab
             heading={
               <TabHeading transparent style={{ backgroundColor: '#303030' }}>
-                <Text style={{ color: '#f1f1f1' }}>Top Headlines</Text>
+                <Text
+                  style={{ color: '#f1f1f1' }}
+                  onPress={() =>
+                    this.headlines.refs.headRef.scrollToIndex({
+                      animated: true,
+                      index: 0,
+                    })
+                  }
+                >
+                  Top Headlines
+                </Text>
               </TabHeading>
             }
           >
-            <Home />
+            <Home
+              ref={r => {
+                this.headlines = r;
+              }}
+            />
           </Tab>
 
           <Tab
@@ -64,6 +78,7 @@ class CategoryScreen extends Component {
           >
             <Tech />
           </Tab>
+
           <Tab
             heading={
               <TabHeading style={{ backgroundColor: '#303030' }}>
