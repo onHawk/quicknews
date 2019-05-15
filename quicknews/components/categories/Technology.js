@@ -37,6 +37,7 @@ class Tech extends Component {
   render() {
     return (
       <FlatList
+        ref="tech"
         data={this.state.articles}
         renderItem={({ item }) => <Articles article={item} />}
         refreshing={this.state.refresh}

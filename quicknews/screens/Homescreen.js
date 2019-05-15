@@ -40,8 +40,6 @@ class Homescreen extends Component {
   };
 
   render() {
-    console.log(this.refs);
-
     return (
       <Container>
         <FlatList

@@ -37,6 +37,7 @@ class Entertainment extends Component {
   render() {
     return (
       <FlatList
+        ref="ent"
         data={this.state.articles}
         renderItem={({ item }) => <Articles article={item} />}
         refreshing={this.state.refresh}

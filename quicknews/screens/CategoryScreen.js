@@ -72,21 +72,49 @@ class CategoryScreen extends Component {
           <Tab
             heading={
               <TabHeading style={{ backgroundColor: '#303030' }}>
-                <Text style={{ color: '#f1f1f1' }}>Technology</Text>
+                <Text
+                  style={{ color: '#f1f1f1' }}
+                  onPress={() => {
+                    this.techRef.refs.tech.scrollToIndex({
+                      animated: true,
+                      index: 0,
+                    });
+                  }}
+                >
+                  Technology
+                </Text>
               </TabHeading>
             }
           >
-            <Tech />
+            <Tech
+              ref={r => {
+                this.techRef = r;
+              }}
+            />
           </Tab>
 
           <Tab
             heading={
               <TabHeading style={{ backgroundColor: '#303030' }}>
-                <Text style={{ color: '#f1f1f1' }}>Entertainment</Text>
+                <Text
+                  style={{ color: '#f1f1f1' }}
+                  onPress={() => {
+                    this.entRef.refs.ent.scrollToIndex({
+                      animated: true,
+                      index: 0,
+                    });
+                  }}
+                >
+                  Entertainment
+                </Text>
               </TabHeading>
             }
           >
-            <Entertainment />
+            <Entertainment
+              ref={r => {
+                this.entRef = r;
+              }}
+            />
           </Tab>
         </Tabs>
       </Container>
