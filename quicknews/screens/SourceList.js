@@ -41,7 +41,9 @@ class SourceList extends Component {
             </Text>
           </ListItem>
           <ListItem>
-            <Text>source 2</Text>
+            <Text onPress={() => this.props.navigation.navigate('CNN')}>
+              CNN
+            </Text>
           </ListItem>
           <ListItem>
             <Text>source 3</Text>

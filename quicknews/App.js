@@ -17,10 +17,12 @@ import {
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import Home from './screens/Homescreen';
 import SourceList from './screens/SourceList';
-import NyTimes from './screens/NyTimes';
 import CategoryScreen from './screens/CategoryScreen';
+
+import Home from './screens/Homescreen';
+import NyTimes from './screens/NyTimes';
+import Cnn from './screens/Cnn';
 
 import Drawer from './components/Drawer';
 
@@ -37,6 +39,7 @@ const AppNavigator = createDrawerNavigator(
     Home: Home,
     Sources: SourceList,
     NyTimes: NyTimes,
+    CNN: Cnn,
   },
   {
     contentComponent: props => <Drawer {...props} />,
