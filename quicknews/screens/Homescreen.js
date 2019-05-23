@@ -39,6 +39,8 @@ class Homescreen extends Component {
     this.setState({ refresh: true }, () => this.fetchNews());
   };
 
+  _keyExtractor = (item, index) => item.id;
+
   render() {
     return (
       <Container>
@@ -52,6 +54,7 @@ class Homescreen extends Component {
               scrollr={this.scrollToTop}
             />
           )}
+          keyExtractor={this._keyExtractor}
           refreshing={this.state.refresh}
           onRefresh={() => this.toRefresh}
         />

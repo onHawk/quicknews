@@ -46,8 +46,9 @@ class NyTimes extends Component {
       });
   }
 
+  _keyExtractor = (item, index) => item.id;
+
   render() {
-    console.log(this.state.articles);
     return (
       <Container>
         <Header transparent>
@@ -71,6 +72,7 @@ class NyTimes extends Component {
           renderItem={({ item }) => (
             <Articles article={item} navigation={this.props.navigation} />
           )}
+          keyExtractor={this._keyExtractor}
           refreshing={this.state.refresh}
           onRefresh={() => this.toRefresh}
         />

@@ -46,6 +46,8 @@ class Cnn extends Component {
       });
   }
 
+  _keyExtractor = (item, index) => item.id;
+
   render() {
     return (
       <Container>
@@ -70,6 +72,7 @@ class Cnn extends Component {
           renderItem={({ item }) => (
             <Articles article={item} navigation={this.props.navigation} />
           )}
+          keyExtractor={this._keyExtractor}
           refreshing={this.state.refresh}
           onRefresh={() => this.toRefresh}
         />

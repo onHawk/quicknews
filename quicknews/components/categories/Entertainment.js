@@ -34,12 +34,15 @@ class Entertainment extends Component {
       });
   }
 
+  _keyExtractor = (item, index) => item.id;
+
   render() {
     return (
       <FlatList
         ref="ent"
         data={this.state.articles}
         renderItem={({ item }) => <Articles article={item} />}
+        keyExtractor={this._keyExtractor}
         refreshing={this.state.refresh}
         onRefresh={() => this.toRefresh}
       />
