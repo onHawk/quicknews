@@ -13,8 +13,8 @@ class DrawerComp extends Component {
       <Container>
         <View
           style={{
-            height: 120,
-            backgroundColor: 'lightblue',
+            height: 30,
+            backgroundColor: '#ffffff',
             alignItems: 'stretch',
           }}
         >
@@ -29,6 +29,7 @@ class DrawerComp extends Component {
                 <ListItem
                   button
                   onPress={() => this.props.navigation.navigate(data.item)}
+                  style={{ padding: 5 }}
                 >
                   <Text>{data.item}</Text>
                 </ListItem>
