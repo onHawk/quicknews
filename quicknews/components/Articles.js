@@ -58,7 +58,7 @@ class Articles extends Component {
               style={styles.article}
               onPress={() => Linking.openURL(url)}
             >
-              <Text>source</Text>
+              <Text>article page</Text>
             </TouchableOpacity>
           </Left>
 
