@@ -48,8 +48,6 @@ const AppNavigator = createDrawerNavigator(
     initialRouteName: 'Categories',
   }
 );
-// const stackNavigator = createStackNavigator({
-// });
 
 const AppContainer = createAppContainer(AppNavigator);
 
